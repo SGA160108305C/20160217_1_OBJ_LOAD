@@ -62,7 +62,14 @@ void ObjLoader::LoadObjFileData(std::vector<ObjFileGroup*>& group, char* fileNam
 
 			else if (tempBuffer[0] == 'v')
 			{
-				if (tempBuffer[1] == 't')
+				if (tempBuffer[1] == ' ')
+				{
+					D3DXVECTOR3 v;
+					sscanf_s(tempBuffer, "%*s %f %f %f\n", &v.x, &v.y, &v.z);
+					pos.push_back(v);
+				}
+
+				else if (tempBuffer[1] == 't')
 				{
 					D3DXVECTOR2 vt;
 					sscanf_s(tempBuffer, "%*s %f %f\n", &vt.x, &vt.y);
@@ -74,13 +81,6 @@ void ObjLoader::LoadObjFileData(std::vector<ObjFileGroup*>& group, char* fileNam
 					D3DXVECTOR3 vn;
 					sscanf_s(tempBuffer, "%*s %f %f %f\n", &vn.x, &vn.y, &vn.z);
 					normal.push_back(vn);
-				}
-
-				else
-				{
-					D3DXVECTOR3 v;
-					sscanf_s(tempBuffer, "%*s %f %f %f\n", &v.x, &v.y, &v.z);
-					pos.push_back(v);
 				}
 			}
 

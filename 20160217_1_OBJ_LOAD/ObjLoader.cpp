@@ -65,21 +65,21 @@ void ObjLoader::LoadObjFileData(std::vector<ObjFileGroup*>& group, char* fileNam
 				if (tempBuffer[1] == ' ')
 				{
 					D3DXVECTOR3 v;
-					sscanf_s(tempBuffer, "%*s %f %f %f\n", &v.x, &v.y, &v.z);
+					sscanf_s(tempBuffer, "%*s %f %f %f", &v.x, &v.y, &v.z);
 					pos.push_back(v);
 				}
 
 				else if (tempBuffer[1] == 't')
 				{
 					D3DXVECTOR2 vt;
-					sscanf_s(tempBuffer, "%*s %f %f\n", &vt.x, &vt.y);
+					sscanf_s(tempBuffer, "%*s %f %f", &vt.x, &vt.y);
 					uv.push_back(vt);
 				}
 
 				else if (tempBuffer[1] == 'n')
 				{
 					D3DXVECTOR3 vn;
-					sscanf_s(tempBuffer, "%*s %f %f %f\n", &vn.x, &vn.y, &vn.z);
+					sscanf_s(tempBuffer, "%*s %f %f %f", &vn.x, &vn.y, &vn.z);
 					normal.push_back(vn);
 				}
 			}
@@ -93,12 +93,28 @@ void ObjLoader::LoadObjFileData(std::vector<ObjFileGroup*>& group, char* fileNam
 
 			else if (tempBuffer[0] == 'f')
 			{
-				FVF_PositionNormalTexture pnt;
-				//int res = sscanf_s(tempBuffer, "%*s %d/%d/%d %d/%d/%d %d/%d/%d\n", &pnt.pos.x, &pnt.pos.y, &pnt.pos.z, );
+				FVF_PositionNormalTexture fvf;
+				int posIndex[3], uvIndex[3], normalIndex[3];
+
+				int res = sscanf_s(tempBuffer,
+					"%*s %d/%d/%d %d/%d/%d %d/%d/%d",
+					&posIndex[0], &uvIndex[0], &normalIndex[0],
+					&posIndex[1], &uvIndex[1], &normalIndex[1],
+					&posIndex[2], &uvIndex[2], &normalIndex[2]
+					);
+
+				for (int i = 0; i < 3; i++)
+				{
+					fvf = FVF_PositionNormalTexture(
+							pos[posIndex[i]],
+							normal[normalIndex[i]],
+							uv[uvIndex[i]]
+							);
+
+					vertex.push_back(fvf);
+				}
 			}
 		}
-
-
 
 		if (!vertex.empty())
 		{

@@ -228,10 +228,6 @@ void ObjLoader::LoadMtlFileData(OUT std::map<std::string, MaterialTexture*>& mat
 				sscanf_s(tempBuffer, "%*s %s", texFileName, 128);
 
 				newMT->texture = TextureManager::GetTexture(texFileName);
-				/*D3DXCreateTextureFromFile(
-					GameManager::GetDevice(),
-					L"./Data/Texture/Box.jpg",
-					&newMT->texture);*/
 			}
 		}
 

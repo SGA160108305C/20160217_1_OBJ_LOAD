@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd seafloor.dds
+map_Kd seafloor.jpg
 
 newmtl 08_-_Default
 Ns 3.921569
@@ -21,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd NMP_Ripples2_512.dds
+map_Kd NMP_Ripples2_512.jpg
 
 newmtl 09_-_Default
 Ns 1.960784
@@ -32,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd seafloor.dds
+map_Kd seafloor.jpg
 
 newmtl 13_-_Default
 Ns 3.921569
@@ -43,7 +43,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd seafloor.dds
+map_Kd seafloor.jpg
 
 newmtl 14_-_Default
 Ns 3.921569
@@ -54,7 +54,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd NMP_Ripples2_512.dds
+map_Kd NMP_Ripples2_512.jpg
 
 newmtl Material__2
 Ns 3.921569
@@ -65,4 +65,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd NMP_Ripples2_512.dds
+map_Kd NMP_Ripples2_512.jpg

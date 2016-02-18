@@ -69,7 +69,7 @@ void GameState_OBJ_Load::Render()
 
 void GameState_OBJ_Load::OnEnterState()
 {
-	GameManager::GetCamera()->SetDistance(30.0f);
+	GameManager::GetCamera()->SetDistance(50.0f);
 	Initialize();
 }
 

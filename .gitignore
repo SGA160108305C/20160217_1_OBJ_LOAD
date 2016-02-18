@@ -14,7 +14,7 @@ x64/
 build/
 bld/
 [Bb]in/
-[Oo]bj/
+#[Oo]bj/
 
 # Roslyn cache directories
 *.ide/
@@ -189,3 +189,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 *.cd
 *.db
+
+#*.mtl
